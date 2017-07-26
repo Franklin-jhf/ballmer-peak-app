@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Playball');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:500i');
+
+body {
+	background: url('../src/img/jamie-street-253014.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.heading {
+	margin: auto;
+	text-align: center;
+	transform: translateY(10vh);
+	width: 68vw;
+	box-shadow: 8px 5px 5px gray;
+	border-radius: 5px;
+	background-color: rgba(50,50,50, 0.1);
+
+}
+
+h1.heading-text {
+	font-family: 'Playball', cursive;
+	color: #bc0835;
+	font-size: 8vw;
+	text-shadow: 8px 8px rgba(50,50,50, 0.15);
+	margin-bottom: 10px;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	padding-bottom: 10px;
+}
+
+.nav div {
+	display: inline-block;
+	font-family: 'Zilla Slab', serif;
+	font-size: 2vw;
+	margin: 0 3vw;
+	width: 20vw;
+	border-radius: 5px;
+	padding: 6px 0;
+}
+
+.nav div:nth-child(1){
+	background-color: rgba(255,60,115, 0.3);
+}
+.nav div:nth-child(2){
+	background-color: rgba(255,117,63, 0.2); // #ff75cf
+}
+.nav div:nth-child(3){
+	background-color: rgba(150,50,255, 0.2);
+}
+
+.nav div:hover {
+	background-color: rgba(50,50,50, 0.15);
+}
