@@ -1,0 +1,68 @@
+form label {
+  padding-left: 1em;
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+.form-group{
+  border-radius: 5px;
+  border: none;
+  margin: auto;
+  margin-bottom: 0px;
+}
+
+.calc-back {
+  background-color: rgba(255,81, 154, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+form table {
+  border-spacing: 1em;
+  border-collapse: separate;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
+.gender-input{
+  display: flex;
+  justify-content: center;
+}
+
+.gender-input select {
+  flex-grow: 1;
+}
+
+tr {
+  margin-bottom: 5em;
+  line-height: normal;
+}
+
+tr td {
+  padding-right: 5vw;
+}
+
+#calc-results {
+  float: none;
+  background-color: inherit;
+  margin-right: 5vw;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#calc-results button {
+  margin-top: 1.3em;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 5, 152, 0.5); //#ff0598
+}
+
+.bac-result {
+  font-size: 2.5em;
+}

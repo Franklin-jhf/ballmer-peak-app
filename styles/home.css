@@ -9,12 +9,10 @@ body {
 .heading {
 	margin: auto;
 	text-align: center;
-	transform: translateY(10vh);
 	width: 68vw;
 	box-shadow: 8px 5px 5px gray;
 	border-radius: 5px;
 	background-color: rgba(50,50,50, 0.1);
-
 }
 
 h1.heading-text {
@@ -32,26 +30,27 @@ h1.heading-text {
 	padding-bottom: 10px;
 }
 
-.nav div {
-	display: inline-block;
-	font-family: 'Zilla Slab', serif;
-	font-size: 2vw;
-	margin: 0 3vw;
-	width: 20vw;
-	border-radius: 5px;
-	padding: 6px 0;
+.rel-xkcd {
+	text-decoration: none;
+	color: lightblue;
+	font-size: .5em;
+	position: absolute;
+	bottom: 2vh;
+	left: 1vw;
 }
 
-.nav div:nth-child(1){
-	background-color: rgba(255,60,115, 0.3);
-}
-.nav div:nth-child(2){
-	background-color: rgba(255,117,63, 0.2); // #ff75cf
-}
-.nav div:nth-child(3){
-	background-color: rgba(150,50,255, 0.2);
-}
+/*.main.ng-enter {
+  transition: 3.75s;
+  opacity: 0; }
+.main.ng-enter-active {
+  opacity: 1; }
+.main.ng-leave {
+  transition: .1s;
+  opacity: 1; }
+.main.ng-leave-active {
+  opacity: 0; }*/
 
-.nav div:hover {
-	background-color: rgba(50,50,50, 0.15);
-}
+
+
+
+

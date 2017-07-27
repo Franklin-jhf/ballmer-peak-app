@@ -1,0 +1,38 @@
+<div class='about-text calc-back'>
+    <form class="form-group">
+        <table>
+          <tr>
+            <td><label>Gender: </label></td>
+            <td class='gender-input'>
+                <select name="gender">
+                    <option value='' disabled selected>Gender</option>
+                    <option value='female'>Female</option>
+                    <option value='male'>Male</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Body weight (in lbs.): </label></td>
+            <td><input ng-model='weight' class="form-group" type="text" name="body-weight"></td>
+          </tr>
+          <tr>
+            <td><label>Amount consumed (fluid oz.): </label></td>
+            <td>
+              <input ng-model='alcVol' class="form-group" type="text" name="alc-vol">
+            </td>
+          </tr>
+          <tr>
+            <td><label>Alcohol concentration (%): </label></td>
+            <td><input ng-model='alcConcentation' class="form-group" type="text" name="alc-concentration"></td>
+          </tr>
+          <tr>
+            <td><label>Time since consumption: </label></td>
+            <td><input ng-model='time' class="form-group" type="text" name="alc-concentration"></td>
+          </tr>
+        </table>
+    </form>
+    <div id='calc-results'>
+		<button ng-click='calculate()'>Calculate></button><p>Your current BAC:</p>
+		<p class='bac-result'>{{result}}</p>
+    </div>
+</div>
