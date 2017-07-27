@@ -4,7 +4,7 @@
           <tr>
             <td><label>Gender: </label></td>
             <td class='gender-input'>
-                <select name="gender">
+                <select name="gender" ng-model="gender">
                     <option value='' disabled selected>Gender</option>
                     <option value='female'>Female</option>
                     <option value='male'>Male</option>
@@ -26,7 +26,7 @@
             <td><input ng-model='alcConcentation' class="form-group" type="text" name="alc-concentration"></td>
           </tr>
           <tr>
-            <td><label>Time since consumption: </label></td>
+            <td><label>Time since consumption (hours): </label></td>
             <td><input ng-model='time' class="form-group" type="text" name="alc-concentration"></td>
           </tr>
         </table>

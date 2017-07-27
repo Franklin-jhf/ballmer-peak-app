@@ -12,7 +12,7 @@ form label {
 }
 
 .calc-back {
-  background-color: rgba(255,81, 154, 0.2);
+  background-color: rgba(255,81, 154, 0.29);
   display: flex;
   justify-content: center;
 }
@@ -44,6 +44,10 @@ tr td {
   padding-right: 5vw;
 }
 
+.calc-back form table {
+  color: black;
+}
+
 #calc-results {
   float: none;
   background-color: inherit;
@@ -54,6 +58,7 @@ tr td {
   justify-content: flex-start;
   text-align: center;
   font-size: 1.2em;
+  color: #262626;
 }
 
 #calc-results button {

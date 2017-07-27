@@ -134,6 +134,7 @@
   transition-property: all;
   -webkit-transition-duration: .6s;
   transition-duration: .6s;
+  overflow:auto;
 }
 
 .about-text p {
@@ -147,11 +148,12 @@
   padding: 5px;
   margin-top: 3vh;
   margin-left: 1vw;
+  margin-bottom: 2vh;
+  margin-right: 1vw;
 }
 .about-text div img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+  max-width:100%;
+  max-height:100%;
 }
 
 
