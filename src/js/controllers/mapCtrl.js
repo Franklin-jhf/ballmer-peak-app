@@ -1,5 +1,6 @@
 app.controller('mapCtrl', ['$scope', function ($scope) {
 	var map , infoWindow;
+	// $scope.showMap = false;
 	setTimeout(function() {
 		// document.getElementById('mapListener').addEventListener('click', function(){
 			map = new window.google.maps.Map(document.getElementById('map'), {
@@ -7,7 +8,7 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 					lat: 32.7,
 					lng: -96.8
 				},
-				zoom: 14
+				zoom: 15
 			})
 			infoWindow = new google.maps.InfoWindow;
 		// });
@@ -24,7 +25,7 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 		        service.nearbySearch({
 		          location: pos,
 		          radius: 500,
-		          type: ['beer']
+		          keyword: 'beer'
 		        }, callback);
 
 	            infoWindow.setPosition(pos);
@@ -46,76 +47,39 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 		        infoWindow.open(map);
 		      }
 	var markers = [];
-	// console.log(pos);
 	
 
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
+	function callback(results, status) {
+	if (status === google.maps.places.PlacesServiceStatus.OK) {
+	  for (var i = 0; i < results.length; i++) {
+	    createMarker(results[i]);
+	  }
+	}
+	}
 
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          animation: google.maps.Animation.DROP,
-          position: place.geometry.location,
-          place: place.getPlace()
-        });
+	function createMarker(place) {
+	var placeLoc = place.geometry.location;
+	var marker = new google.maps.Marker({
+	  map: map,
+	  title: place.name,
+	  animation: google.maps.Animation.DROP,
+	  position: placeLoc
+	});
 
-        // var infoWindow = new window.google.maps.InfoWindow({
-        // 	content: 
-        // })
+	var infowindow = new window.google.maps.InfoWindow();
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
+	google.maps.event.addListener(marker, 'click', function() {
+	  infowindow.setContent(place.name + '\n' + place.formatted_address + '\n' + place.formatted_phone_number);
+	  infowindow.open(map, this);
+	});
+	}
+
+	// map.addListener('center_changed', function() {
+	// 	$scope.showMap = true;
+	// })
 
 	}, 100)
+
+
+
 }])
-	// var mapLocations = function() {
-	// 	for (var i = 0; i < markers.length; i++) {
-	// 		markers[i].setMap(null);
-	// 	}
-	// 	markers = [];
-	// 	infoWindows = [];
-	// 	console.log($scope.locations);
-	// 	$scope.locations.forEach(function(location) {
-	// 		if (location) {
-	// 			var marker = new window.google.maps.Marker({
-	// 				title: location,
-	// 				position: {
-	// 					lat: parseFloat(location.latitude),
-	// 					lng: parseFloat(location.longitude)
-	// 				},
-	// 				map: map,
-	// 				animation: google.maps.Animation.DROP,
-	// 				icon: 'src/img/marker.png'
-	// 			})
-	// 			markers.push(marker);
-	// 			// console.log(markers);
-	// 			var infoWindow = new window.google.maps.InfoWindow({
-
-	// 				content: "<div style='text-align:center; margin-left:25px; font-family: Sans-serif; font-size:15px'><br>" +
-	// 					location + '<br>' 
-	// 			});
-
-	// 			infoWindows.push(infoWindow)
-
-	// 			marker.addListener('click', function() {
-	// 				for (var i = 0; i < markers.length; i++) {
-	// 					infoWindows[i].close(map, markers[i])
-	// 				}
-	// 				infoWindow.open(map, marker);
-	// 			});
-	// 			map.addListener('click', function() {
-	// 				infoWindow.close(map, marker);
-	// 			})
-	// 		}
-	// 	})
-	// }

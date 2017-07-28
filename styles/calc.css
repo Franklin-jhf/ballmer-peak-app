@@ -71,3 +71,44 @@ tr td {
 .bac-result {
   font-size: 2.5em;
 }
+
+.plan-style {
+  background-color: #d4bfea;
+  padding: 2em;
+  border-radius: 20px;
+}
+
+
+.input {
+  padding: 24px 32px 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+#output {
+  display: none;
+  /*background-color: rgba(150,50,255, 0.7);*/
+}
+
+
+#genderSelect {
+  background-color: #ad9dc3;
+  color: white;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #ad9dc3;
+}
+
+.chart {
+  height: 400px;
+  width: auto;
+}
