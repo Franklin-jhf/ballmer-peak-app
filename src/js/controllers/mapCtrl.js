@@ -50,28 +50,30 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 	
 
 	function callback(results, status) {
-	if (status === google.maps.places.PlacesServiceStatus.OK) {
-	  for (var i = 0; i < results.length; i++) {
-	    createMarker(results[i]);
-	  }
-	}
+		if (status === google.maps.places.PlacesServiceStatus.OK) {
+		  for (var i = 0; i < results.length; i++) {
+		    createMarker(results[i]);
+		  }
+		}
 	}
 
 	function createMarker(place) {
-	var placeLoc = place.geometry.location;
-	var marker = new google.maps.Marker({
-	  map: map,
-	  title: place.name,
-	  animation: google.maps.Animation.DROP,
-	  position: placeLoc
-	});
+		var placeLoc = place.geometry.location;
+		var marker = new google.maps.Marker({
+		  map: map,
+		  title: place.name,
+		  animation: google.maps.Animation.DROP,
+		  position: placeLoc
+		});
+		console.log(place);
+		var infowindow = new window.google.maps.InfoWindow();
 
-	var infowindow = new window.google.maps.InfoWindow();
-
-	google.maps.event.addListener(marker, 'click', function() {
-	  infowindow.setContent(place.name + '\n' + place.formatted_address + '\n' + place.formatted_phone_number);
-	  infowindow.open(map, this);
-	});
+		google.maps.event.addListener(marker, 'click', function() {
+			if (place.opening_hours.open_now !== undefined && place)
+			{var openNow = place.opening_hours.open_now ? 'Currently Open' : "Currently Closed"}
+		  infowindow.setContent(place.name + '<br>' + place.vicinity + '<br>' + (openNow || ''));
+		  infowindow.open(map, this);
+		});
 	}
 
 	// map.addListener('center_changed', function() {

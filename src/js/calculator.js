@@ -1,10 +1,10 @@
 var MALE_CONST = 0.73;
 var FEMALE_CONST = 0.66;
-var BOOZE_CONST = 0.3243;
+var BOOZE_CONST = 0.3243 * .66;
 var TIME_CONST = 0.015;
 var TIME_FORMAT = 'HH:mm a';
 var MINUTE_GRANULARITY = 5;
-var BALLMER_PEAK_BAC = 0.12;
+var BALLMER_PEAK_BAC = 0.13;
 
 console.log('it is called');
 // Get BAC from weight (lbs), bender, time elapsed (hours) and # standard drinks
@@ -56,7 +56,7 @@ function getBacData(startTime, endTime, weight, genderConstant, drinkSchedule) {
     var bac = getBac(weight, genderConstant, timeDelta, numDrinks);
     bacData.push({
       x: time,
-      y: bac
+      y: bac * .1
     });
   }
 

@@ -6,9 +6,8 @@
             <nearby-elem></nearby-elem>
         </div>
         <plan-elem></plan-elem>
-        <hr>
         <div class='plan-style'>
-            <h2>Input</h2>
+            <h2>Generate a personalized drinking schedule to maintain your peak</h2>
             <div class="input">
             <form>
               <div class="form-group row">
@@ -22,24 +21,24 @@
               <div class="form-group row">
                 <label for="start-time" class="col-2 col-form-label">Start time</label>
                 <div class="col-10">
-                  <input class="form-control" type="time" value="13:00" id="start-time">
+                  <input class="form-control inputBack" type="time" value="13:00" id="start-time">
                 </div>
               </div>
                 <label for="peak-time" class="col-2 col-form-label">Peak time</label>
                 <div class="col-10">
-                  <input class="form-control" type="time" value="14:00" id="peak-time">
+                  <input class="form-control inputBack" type="time" value="14:00" id="peak-time">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="end-time" class="col-2 col-form-label">End time</label>
                 <div class="col-10">
-                  <input class="form-control" type="time" value="15:00" id="end-time">
+                  <input class="form-control inputBack" type="time" value="15:00" id="end-time">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="weight" class="col-2 col-form-label">Weight (lbs)</label>
                 <div class="col-10">
-                  <input class="form-control" type="number" value="165" id="weight">
+                  <input class="form-control inputBack" type="number" value="165" id="weight">
                 </div>
               </div>
               <div class="form-group row">
@@ -56,7 +55,7 @@
                 <h4>Blood alcohol content</h4>
                 <canvas id="bac-chart" class="chart" height="200"></canvas>
 
-                <h4>Drink schedule</h4>
+                <h4>Drink schedule: 1 drink = 12oz of a 5% beer, 5oz of a 12% wine, or 1.5oz of a 40% spirit</h4>
                 <canvas id="drink-chart" class="chart" height="200"></canvas>
             </div>
         </div>

@@ -104,8 +104,15 @@ tr td {
    border-radius: 5px;
 }
 
-.btn-primary {
+.btn-primary, .inputBack {
   background-color: #ad9dc3;
+  color: white;
+  margin: auto;
+}
+
+.form-control {
+  width: 20vw;
+  margin: auto;
 }
 
 .chart {
