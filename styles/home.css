@@ -39,6 +39,11 @@ h1.heading-text {
 	left: 1vw;
 }
 
+#map {
+	width: auto;
+	height: 450px;
+}
+
 /*.main.ng-enter {
   transition: 3.75s;
   opacity: 0; }

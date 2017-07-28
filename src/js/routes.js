@@ -15,7 +15,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		})
 		.state('nearby', {
 			url:'/nearby',
-			templateUrl: 'src/views/nearby.html'
+			templateUrl: 'src/views/nearby.html',
+			controller: 'mapCtrl'
 		})
 		.state('plan', {
 			url:'/plan',

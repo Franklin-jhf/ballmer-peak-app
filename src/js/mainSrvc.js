@@ -8,9 +8,4 @@ app.service('mainSrvc', [function ($http) {
 		return (percent - 0.015 * time).toFixed(3);
 	}
 
-	// GOOGLE MAP HTTP REQ
-	this.map = () => {
-		return $http 
-		//
-	}
 }])
