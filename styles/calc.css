@@ -104,6 +104,19 @@ tr td {
    border-radius: 5px;
 }
 
+#bacselect {
+  background-color: #ad9dc3;
+  color: white;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
 .btn-primary, .inputBack {
   background-color: #ad9dc3;
   color: white;

@@ -1,6 +1,6 @@
 var MALE_CONST = 0.73;
 var FEMALE_CONST = 0.66;
-var BOOZE_CONST = 0.3243 * .66;
+var BOOZE_CONST = 0.3243;
 var TIME_CONST = 0.015;
 var TIME_FORMAT = 'HH:mm a';
 var MINUTE_GRANULARITY = 5;
@@ -19,7 +19,10 @@ function getNumDrinks(weight, genderConstant, time, bac) {
 
 function getDrinkSchedule(startTime, peakTime, weight, genderConstant) {
   var timeToPeak = moment.duration(peakTime.diff(startTime));
-  var numDrinks = getNumDrinks(weight, genderConstant, timeToPeak.asHours(), BALLMER_PEAK_BAC);
+  var f = document.getElementById('bacselect')
+  if (f.options[f.selectedIndex].value === 'studybacked') {var bacCalc = 0.075;}
+  else {bacCalc = BALLMER_PEAK_BAC}
+  var numDrinks = getNumDrinks(weight, genderConstant, timeToPeak.asHours(), bacCalc);
   var timeDelta = timeToPeak.asMinutes() / Math.ceil(numDrinks);
   var drinkSchedule = [];
 
@@ -56,7 +59,7 @@ function getBacData(startTime, endTime, weight, genderConstant, drinkSchedule) {
     var bac = getBac(weight, genderConstant, timeDelta, numDrinks);
     bacData.push({
       x: time,
-      y: bac * .1
+      y: bac
     });
   }
 

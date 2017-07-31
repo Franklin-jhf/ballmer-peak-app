@@ -13,7 +13,8 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 			infoWindow = new google.maps.InfoWindow;
 		// });
 		var pos;
-		if (navigator.geolocation) {
+		if (!Object.keys(navigator.geolocation).length) {
+			console.log('geolocation whatever');
 	          navigator.geolocation.getCurrentPosition(function(position) {
 	            pos = {
 	              lat: position.coords.latitude,
@@ -80,7 +81,7 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 	// 	$scope.showMap = true;
 	// })
 
-	}, 100)
+	}, 1000)
 
 
 
