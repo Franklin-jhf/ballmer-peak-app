@@ -3,22 +3,25 @@ app.controller('mapCtrl', ['$scope', function ($scope) {
 	// $scope.showMap = false;
 	setTimeout(function() {
 		// document.getElementById('mapListener').addEventListener('click', function(){
-			map = new window.google.maps.Map(document.getElementById('map'), {
-				center: {
-					lat: 32.7,
-					lng: -96.8
-				},
-				zoom: 15
-			})
-			infoWindow = new google.maps.InfoWindow;
+		map = new window.google.maps.Map(document.getElementById('map'), {
+			center: {
+				lat: 32.7,
+				lng: -96.8
+			},
+			zoom: 15
+		})
+		infoWindow = new google.maps.InfoWindow;
 		// });
 		var pos;
 		if (navigator.geolocation) {
+				console.log('made it here');
 	          navigator.geolocation.getCurrentPosition(function(position) {
+	          	console.log(position.coords.latitude);
 	            pos = {
 	              lat: position.coords.latitude,
 	              lng: position.coords.longitude
 	            };
+	            console.log(pos);
 	            map.setCenter(pos);
 	            // infowindow = new google.maps.InfoWindow();
 		        var service = new google.maps.places.PlacesService(map);
